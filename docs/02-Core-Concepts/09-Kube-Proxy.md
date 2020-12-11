@@ -4,7 +4,8 @@
 In this section, we will take a look at kube-proxy.
 
 Within Kubernetes Cluster, every pod can reach every other pod, this is accomplish by deploying a pod networking cluster to the cluster. 
-- Kube-Proxy is a process that runs on each node in the kubernetes cluster.
+- Kube-Proxy is a process that runs on each node in the kubernetes cluster. It's job is it look for new services, and each time a service is created
+it creates appropriate rule to forward new traffic to backend pods. 
   
   ![kube-proxy](../../images/kube-proxy.PNG)
   
@@ -19,7 +20,7 @@ Within Kubernetes Cluster, every pod can reach every other pod, this is accompli
   ![kube-proxy1](../../images/kube-proxy1.PNG)
 
 ## View kube-proxy options - kubeadm
-- If you set it up with kubeadm tool, kubeadm tool will deploy the kube-proxy as pod in kube-system namespace. In fact it is deployed as a daemonset on master node.
+- If you set it up with kubeadm tool, kubeadm tool will deploy the kube-proxy as pod (in each node in the cluster) in kube-system namespace. In fact it is deployed as a daemonset on master node.
   ```
   $ kubectl get pods -n kube-system
   ```
