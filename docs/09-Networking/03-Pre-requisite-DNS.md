@@ -74,6 +74,8 @@ ping: www.github.com: Temporary failure in name resolution
 
 - Adding well known public nameserver in the `/etc/resolv.conf` file.
 
+public nameserver 8.8.8.8 hosted by google
+
 ```
 $ cat /etc/resolv.conf
 nameserver   127.0.0.53
@@ -100,11 +102,14 @@ PING github.com (140.82.121.3) 56(84) bytes of data.
 
 ![net-10](../../images/net10.PNG)
 
+mapping one name to another name is called cname records. 
+
 ## Networking Tools
 
 - Useful networking tools to test dns name resolution.
 
 #### nslookup 
+doesn't check etc/hosts
 
 ```
 $ nslookup www.google.com
