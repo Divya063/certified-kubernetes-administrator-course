@@ -4,6 +4,8 @@
 
 In this section, we will take a look at **Service Networking**
 
+Service is accessible across all the nodes. 
+
 ## Service Types
 
 - ClusterIP 
